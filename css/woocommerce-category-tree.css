@@ -1,0 +1,66 @@
+/* Main div */
+.wct-categories {
+  max-width: 220px;
+}
+
+/* Plus if element is hidden */
+.main-category-expand::after, .sub-category-expand::after {
+  content: '\002b';
+}
+
+/* Minus if element is expanded */
+.main-category-expand.expanded::after, .sub-category-expand.expanded::after {
+  content: '\2212';
+}
+
+/* Plus/Minus style */
+.main-category-expand, .sub-category-expand {
+  margin-left: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Hover on plus/minus */
+.main-category-expand:hover, .sub-category-expand:hover {
+  color: #000000;
+}
+
+/* Font main category */
+.wct-category a {
+  font-size: 15px;
+}
+
+/* Font sub category */
+.wct-sub-category a {
+  font-size: 14px;
+}
+
+/* Font sub sub category */
+.wct-sub-sub-category a {
+  font-size: 13px;
+}
+
+/* Default subcategory/subsubcategory */
+.wct-sub-categories, .wct-sub-sub-categories {
+  opacity: 0;
+  height: 0;
+  transition: opacity 1s ease-out, transform .3s ease-out;
+  overflow: hidden;
+  margin-left: 10px;
+  border-left: 1px solid #cccccc;
+  padding-left: 10px;
+  transform: scale(1.5);
+}
+
+/* Visible subcategory/subsubcategory */
+.wct-sub-sub-categories.wct--visible, .wct-sub-categories.wct--visible {
+  opacity: 1;
+  height: auto;
+  transform: scale(1);
+}
+
+/* Active category */
+.wct--active a {
+  font-weight: bold;
+}
